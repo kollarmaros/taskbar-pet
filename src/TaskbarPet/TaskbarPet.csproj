@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <AssemblyTitle>Taskbar Pet</AssemblyTitle>
+    <Product>Taskbar Pet</Product>
+    <Description>A pixel-art pet on the Windows taskbar that reacts to CPU load.</Description>
+    <Version>0.1.0</Version>
+    <!-- Keep the version shown in Windows (and read by the installer) as plain "0.0.1", without a git hash. -->
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <!-- Each animations/<name>/<name>.gif (made by tools/sheet_to_gif.py) is built into the exe as resource
+       "animations/<name>.gif". An optional animations folder next to the exe can add or replace GIFs (AnimationLibrary). -->
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\animations\*\*.gif"
+                      Exclude="..\..\animations\*\preview*.gif;..\..\animations\*\*_16.gif;..\..\animations\*\*_24.gif;..\..\animations\*\*_32.gif"
+                      LogicalName="animations/%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+# build output
+bin/
+obj/
+publish/
+dist/
+*.user
+.vs/
+__pycache__/
+
+# source sprite sheets (AI-generated) are kept locally only
+proposition_images/
+
+# local release helper
+release.sh
+release-changes.md
+
+# local helper tools and analysis
+tools/
+analysis/
+
+# animation frames are kept locally; the app only needs animations/<name>/<name>.gif
+animations/*/frames/
